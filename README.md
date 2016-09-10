@@ -1,4 +1,6 @@
-## 八 作者相关：
+# NestFullListView
+
+##  作者相关：
 
 我的CSDN博客：
 
@@ -16,7 +18,7 @@ http://www.jianshu.com/users/8e91ff99b072/timeline
 
 https://github.com/mcxtzhang
 ***
-# NestFullListView
+
 博文:http://blog.csdn.net/zxt0601/article/details/52494665
 
 
@@ -27,7 +29,7 @@ ScrollView里嵌套ListView，一直是Android开发者（反正至少是我们�
 还拿我前两天做的这个项目来说吧，如上图，技能认可是一个“ListView”，工作经历是一个“ListView”，每个"ListView"的Item里还会有评论，评论又是一个“ListView”，项目经历 教育经历与此类似。。世界上最恐怖的事，不是ListView套ListView，是ListView套的ListView，里面还要继续嵌套ListView。。 
 （题外话，这个页面头部是个巨幅Headerview，巨幅HeaderView里面嵌套最多两层ListView，然后底部还是一个分页的列表，不断加载更多.......  这个坑爹货也导致了我另一篇文章的产生： 让HeaderView也参与回收机制,自我感觉是优雅的为 RecyclerView 添加 HeaderView (FooterView)的解决方案http://blog.csdn.net/zxt0601/article/details/52267325 ）
 ***
-## 二 竞品分析：
+##  竞品分析：
 对于以上情况， 由于需要在ScrollView中嵌套ListView
 ，或者ListView中嵌套ListView....总结就是要嵌套ListView在另外的可以滑动的ViewGroup中，这就有两个问题，
 
@@ -74,7 +76,7 @@ So本文就是基于此种思路，封装一下固定代码，方便二次快速
 
 
 
-## 六 总结：
+##  总结：
 其实这种方法，真的称不上优雅，只不过跟别的方法比起来，相对优雅吧。
 在我心中最好的方法就是利用RecyclerView的ItemViewType来解决，可惜由于接口，以及数据结构限制，只能退而求其次。如若有朋友有更好的办法，欢迎交流。
 再次强调一遍~本文的方法只是尽可能的**节省刷新时的性能消耗**，
