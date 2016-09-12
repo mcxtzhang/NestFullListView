@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 
 /**
- * 通用的ListView/GridView 的ViewHolder ，使用者无需关心
+ * NestFullListView 的ViewHolder ，使用者无需关心
  * Created by zhangxutong .
  * Date: 16/03/11
  */
