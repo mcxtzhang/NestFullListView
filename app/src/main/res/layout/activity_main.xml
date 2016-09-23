@@ -21,24 +21,34 @@
             <com.mcxtzhang.cstnorecyclelistview.FullListView.NestFullListView
                 android:id="@+id/cstFullShowListView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:divider="@drawable/divide"
+                android:orientation="vertical"
+                android:showDividers="middle" />
         </LinearLayout>
 
     </ScrollView>
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:onClick="add"
-        android:text="add" />
-
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:onClick="del"
-        android:text="del" />
+        android:divider="@drawable/divide"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="add"
+            android:text="add" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="del"
+            android:text="del" />
+
+    </LinearLayout>
 
 </RelativeLayout>
