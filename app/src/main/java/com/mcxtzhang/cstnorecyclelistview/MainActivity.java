@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mcxtzhang.cstnorecyclelistview.bean.NestBean;
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+        TextView textView = new TextView(this);
+        textView.setText("我是尾巴");
+        nestFullListView.setFooterView(0, textView);
     }
 
     private void initDatas() {
@@ -86,10 +90,16 @@ public class MainActivity extends AppCompatActivity {
     public void add(View view) {
         mDatas.add(new TestBean("add", "http://finance.gucheng.com/UploadFiles_7830/201603/2016032110220685.jpg"));
         nestFullListView.updateUI();
+        TextView textView = new TextView(this);
+        textView.setText("我是尾巴3333333333333333");
+        nestFullListView.setFooterView(0, textView);
     }
 
     public void del(View view) {
         mDatas.remove(mDatas.size() - 1);
         nestFullListView.updateUI();
+        TextView textView = new TextView(this);
+        textView.setText("我是尾巴22222222222");
+        nestFullListView.setFooterView(0, textView);
     }
 }
