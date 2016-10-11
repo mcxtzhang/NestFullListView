@@ -20,7 +20,19 @@ https://github.com/mcxtzhang
 ***
 
 博文:http://blog.csdn.net/zxt0601/article/details/52494665
-
+---
+2016 10 11 更新：
+1 支持多种FooterView：
+```
+        TextView textView = new TextView(this);
+        textView.setText("我是尾巴");
+        nestFullListView.setFooterView(0, textView);
+        TextView textView4 = new TextView(this);
+        textView4.setText("我是尾巴4444444444444444");
+        nestFullListView.addFooterView(textView4);
+        
+```
+---
 
 ScrollView里嵌套ListView，一直是Android开发者（反正至少是我们组）最讨厌的设计之一，完美打破ListView（RecyclerView）的复用机制，成功的将Native页面变成一个又臭又长的H5网页效果，但由于这种设计需求在我司项目实在太多见，无奈之下，我还是决定封装一下，毕竟，一个项目里同样的代码写第二遍的程序员都不是好的圣斗士。但是我真的是拒绝的 ！拒绝的！拒绝的！真的不喜欢这种界面：
 
