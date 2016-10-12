@@ -55,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         textView.setText("我是尾巴");
         nestFullListView.setFooterView(0, textView);
+        TextView textView4 = new TextView(this);
+        textView4.setText("我是尾巴4444444444444444");
+        nestFullListView.addFooterView(textView4);
     }
 
     private void initDatas() {
