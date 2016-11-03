@@ -18,6 +18,7 @@ import java.util.List;
 public class NestFullListView extends LinearLayout {
     private LayoutInflater mInflater;
     private List<NestFullViewHolder> mVHCahces;//缓存ViewHolder,按照add的顺序缓存，
+    private OnItemClickListener mOnItemClickListener;// 子项点击事件
 
     public NestFullListView(Context context) {
         this(context, null);
@@ -39,6 +40,14 @@ public class NestFullListView extends LinearLayout {
         //setOrientation(VERTICAL);
     }
 
+    /**
+     * 设置点击事件
+     *
+     * @param listener
+     */
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mOnItemClickListener = listener;
+    }
 
     private NestFullListViewAdapter mAdapter;
 
@@ -79,6 +88,18 @@ public class NestFullListView extends LinearLayout {
                     if (null == holder.getConvertView().getParent()) {
                         this.addView(holder.getConvertView(), getChildCount() - getFooterCount());
                     }
+
+                    /* 增加子项点击事件 */
+                    final int mPosition = i;
+                    holder.getConvertView().setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View v) {
+                            if (mOnItemClickListener != null && mAdapter != null) {
+                                mOnItemClickListener.onItemClick(NestFullListView.this, v, mPosition);
+                            }
+                        }
+                    });
                 }
             } else {
                 removeViews(0, getChildCount() - getFooterCount());//数据源没数据 清空视图
@@ -121,6 +142,15 @@ public class NestFullListView extends LinearLayout {
             removeViewAt(realPos);
             addView(footer, realPos);
         }
+    }
+
+
+    /**
+     * 子项点击事件的接口
+     */
+    public interface OnItemClickListener {
+
+        void onItemClick(NestFullListView parent, View view, int position);
     }
 
 }
