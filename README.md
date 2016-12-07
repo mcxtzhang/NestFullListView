@@ -1,6 +1,9 @@
 # NestFullListView
 
-##  作者相关：
+##  在哪里找到我：
+我的github：
+
+https://github.com/mcxtzhang
 
 我的CSDN博客：
 
@@ -13,13 +16,12 @@ http://gold.xitu.io/user/56de210b816dfa0052e66495
 我的简书：
 
 http://www.jianshu.com/users/8e91ff99b072/timeline
-
-我的github：
-
-https://github.com/mcxtzhang
 ***
 
-博文:http://blog.csdn.net/zxt0601/article/details/52494665
+## 博文
+
+http://blog.csdn.net/zxt0601/article/details/52494665
+
 ---
 2016 10 11 更新：
 1 支持多种FooterView：
