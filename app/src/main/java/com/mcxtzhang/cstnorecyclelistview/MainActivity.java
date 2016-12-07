@@ -10,9 +10,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.mcxtzhang.cstnorecyclelistview.bean.NestBean;
 import com.mcxtzhang.cstnorecyclelistview.bean.TestBean;
-import com.mcxtzhang.cstnorecyclelistview.FullListView.NestFullListView;
-import com.mcxtzhang.cstnorecyclelistview.FullListView.NestFullListViewAdapter;
-import com.mcxtzhang.cstnorecyclelistview.FullListView.NestFullViewHolder;
+import com.mcxtzhang.nestlistview.NestFullListView;
+import com.mcxtzhang.nestlistview.NestFullListViewAdapter;
+import com.mcxtzhang.nestlistview.NestFullViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;

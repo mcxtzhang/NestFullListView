@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NestFullListView.iml" filepath="$PROJECT_DIR$/NestFullListView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nestlistview/nestlistview.iml" filepath="$PROJECT_DIR$/nestlistview/nestlistview.iml" />
     </modules>
   </component>
 </project>

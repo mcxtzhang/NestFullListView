@@ -1,4 +1,4 @@
-package com.mcxtzhang.cstnorecyclelistview.FullListView;
+package com.mcxtzhang.nestlistview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

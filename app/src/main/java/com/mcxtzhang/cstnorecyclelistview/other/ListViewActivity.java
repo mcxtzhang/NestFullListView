@@ -28,7 +28,6 @@ public class ListViewActivity extends AppCompatActivity {
         initDatas();
         listViewForScrollView = (ListViewForScrollView) findViewById(R.id.lv);
         listViewForScrollView.setAdapter(mAdapter = new LvAdapter(mDatas, this));
-        listViewForScrollView.removeFooterView()
     }
 
     private void initDatas() {
