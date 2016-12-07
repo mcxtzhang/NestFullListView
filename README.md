@@ -1,5 +1,7 @@
 # NestFullListView
 
+【Android】ListView、RecyclerView、ScrollView里嵌套ListView 相对优雅的解决方案:NestFullListView
+
 ##  在哪里找到我：
 我的github：
 
@@ -20,9 +22,87 @@ http://www.jianshu.com/users/8e91ff99b072/timeline
 
 ## 博文
 
+【Android】ListView、RecyclerView、ScrollView里嵌套ListView 相对优雅的解决方案:NestFullListView
+
 http://blog.csdn.net/zxt0601/article/details/52494665
 
+## 使用：
+Step 1. 在项目根build.gradle文件中增加JitPack仓库依赖。
+```
+    allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
+Step 2. Add the dependency
+```
+    dependencies {
+	        compile 'com.github.mcxtzhang:NestFullListView:V1.0.0'
+	}
+```
+
+Step 3.
+in xml:
+```
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.mcxtzhang.nestlistview.NestFullListView
+                android:id="@+id/cstFullShowListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+    </ScrollView>
+```
+
+in java:
+```
+        nestFullListView = (NestFullListView) findViewById(R.id.cstFullShowListView);
+
+        nestFullListView.setAdapter(new NestFullListViewAdapter<TestBean>(R.layout.item_lv, mDatas) {
+            @Override
+            public void onBind(int pos, TestBean testBean, NestFullViewHolder holder) {
+                Log.d(TAG, "嵌套第一层ScrollView onBind() called with: pos = [" + pos + "], testBean = [" + testBean + "], v = [" + holder + "]");
+                //TextView tv = (TextView) v.findViewById(R.id.tv);
+                holder.setText(R.id.tv, testBean.getName());
+
+                Glide.with(MainActivity.this)
+                        .load(testBean.getUrl())
+                        .into((ImageView) holder.getView(R.id.iv));
+
+
+                ((NestFullListView) holder.getView(R.id.cstFullShowListView2)).setAdapter(new NestFullListViewAdapter<NestBean>(R.layout.item_nest_lv, testBean.getNest()) {
+                    @Override
+                    public void onBind(int pos, NestBean nestBean, NestFullViewHolder holder) {
+                        Log.d(TAG, "嵌套第二层onBind() called with: pos = [" + pos + "], nestBean = [" + nestBean + "], v = [" + holder + "]");
+                        Glide.with(MainActivity.this)
+                                .load(nestBean.getUrl())
+                                .into((ImageView) holder.getView(R.id.nestIv));
+                    }
+                });
+            }
+        });
+```
+
+### 注意：
+
+因为本控件是由LinearLayout改造而成，所以支持 水平和垂直布局。通过
+`android:orientation="vertical"`改变。
+
 ---
+## 更新日志:
+
+
 2016 10 11 更新：
 1 支持多种FooterView：
 ```
@@ -101,36 +181,6 @@ So本文就是基于此种思路，封装一下固定代码，方便二次快速
 它们都是在一开始，就把所有的子View统统inflate add bind好了，
 不像ListView，RecyclerView..兄弟们，是子View在屏幕上可见时才创建，添加，数据绑定。
 
-
-
-复制FullListView包下三个文件（NestFullListView NestFullListViewAdapter  NestFullViewHolder)即可畅快使用，
-```
-        nestFullListView = (NestFullListView) findViewById(R.id.cstFullShowListView);
-
-        nestFullListView.setAdapter(new NestFullListViewAdapter<TestBean>(R.layout.item_lv, mDatas) {
-            @Override
-            public void onBind(int pos, TestBean testBean, NestFullViewHolder holder) {
-                Log.d(TAG, "嵌套第一层ScrollView onBind() called with: pos = [" + pos + "], testBean = [" + testBean + "], v = [" + holder + "]");
-                //TextView tv = (TextView) v.findViewById(R.id.tv);
-                holder.setText(R.id.tv, testBean.getName());
-
-                Glide.with(MainActivity.this)
-                        .load(testBean.getUrl())
-                        .into((ImageView) holder.getView(R.id.iv));
-
-
-                ((NestFullListView) holder.getView(R.id.cstFullShowListView2)).setAdapter(new NestFullListViewAdapter<NestBean>(R.layout.item_nest_lv, testBean.getNest()) {
-                    @Override
-                    public void onBind(int pos, NestBean nestBean, NestFullViewHolder holder) {
-                        Log.d(TAG, "嵌套第二层onBind() called with: pos = [" + pos + "], nestBean = [" + nestBean + "], v = [" + holder + "]");
-                        Glide.with(MainActivity.this)
-                                .load(nestBean.getUrl())
-                                .into((ImageView) holder.getView(R.id.nestIv));
-                    }
-                });
-            }
-        });
-```
 
 欢迎讨论交流，拍板砖，如有更优方法，真心求指教。
 ***
