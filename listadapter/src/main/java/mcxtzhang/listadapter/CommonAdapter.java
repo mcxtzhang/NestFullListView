@@ -2,9 +2,9 @@ package mcxtzhang.listadapter;
 
 import android.content.Context;
 
-import com.zhy.adapter.abslistview.base.ItemViewDelegate;
-
 import java.util.List;
+
+import mcxtzhang.listadapter.base.ItemViewDelegate;
 
 public abstract class CommonAdapter<T> extends MultiItemTypeAdapter<T>
 {

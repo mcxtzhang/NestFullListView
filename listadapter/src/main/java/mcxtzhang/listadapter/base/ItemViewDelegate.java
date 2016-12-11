@@ -1,7 +1,7 @@
 package mcxtzhang.listadapter.base;
 
 
-import com.zhy.adapter.abslistview.ViewHolder;
+import mcxtzhang.listadapter.ViewHolder;
 
 /**
  * Created by zhy on 16/6/22.

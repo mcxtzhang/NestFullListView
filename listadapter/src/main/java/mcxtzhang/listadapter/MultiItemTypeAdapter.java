@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.zhy.adapter.abslistview.base.ItemViewDelegate;
-import com.zhy.adapter.abslistview.base.ItemViewDelegateManager;
-
 import java.util.List;
+
+import mcxtzhang.listadapter.base.ItemViewDelegate;
+import mcxtzhang.listadapter.base.ItemViewDelegateManager;
 
 public class MultiItemTypeAdapter<T> extends BaseAdapter {
     protected Context mContext;

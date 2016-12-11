@@ -2,7 +2,7 @@ package mcxtzhang.listadapter.base;
 
 import android.support.v4.util.SparseArrayCompat;
 
-import com.zhy.adapter.abslistview.ViewHolder;
+import mcxtzhang.listadapter.ViewHolder;
 
 
 /**
