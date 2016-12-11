@@ -1,1 +1,1 @@
-include ':app', ':nestlistview'
+include ':app', ':nestlistview', ':viewgroupadapter', ':listadapter'
