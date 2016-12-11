@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:support-v4:25.0.0'
     compile project (':nestlistview')
     compile project (':listadapter')
+    compile project (':viewgroupadapter')
 }
