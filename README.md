@@ -1,7 +1,7 @@
 # NestFullListView
 [Deprecated]
 
-## 建议移步关注
+##  本工程合并至以下工程，建议移步关注
 
 https://github.com/mcxtzhang/all-base-adapter
 
