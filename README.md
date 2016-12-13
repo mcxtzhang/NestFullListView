@@ -1,4 +1,11 @@
 # NestFullListView
+[Deprecated]
+
+## 建议移步关注
+
+https://github.com/mcxtzhang/all-base-adapter
+
+喜欢的话，随手点个star。多谢
 
 【Android】ListView、RecyclerView、ScrollView里嵌套ListView 相对优雅的解决方案:NestFullListView
 
